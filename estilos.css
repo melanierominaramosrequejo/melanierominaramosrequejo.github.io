@@ -78,59 +78,41 @@ header h1 {
 }
 
 /* Isotipo provisional creado únicamente con CSS */
-header h1::before {
-    content: "AH";
+/* Logo oficial AquaNexo */
 
-    display: grid;
-    place-items: center;
-
-    width: 44px;
-    height: 44px;
-
-    color: var(--turquesa);
-    background-color: var(--azul-oscuro);
-    border-radius: 50%;
-
-    font-size: 13px;
-    font-weight: 900;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-nav a {
+header .marca-logo {
     position: relative;
+    overflow: hidden;
 
-    color: var(--azul-oscuro);
-    text-decoration: none;
+    display: block;
+    flex: 0 0 230px;
 
-    font-size: 15px;
-    font-weight: 750;
+    width: 230px;
+    height: 86px;
 }
 
-nav a::after {
-    content: "";
-
+header .marca-logo img {
     position: absolute;
-    left: 0;
-    bottom: -7px;
+    top: 50%;
+    left: 50%;
 
-    width: 0;
-    height: 2px;
+    width: 430px !important;
+    max-width: none !important;
+    height: auto !important;
 
-    background-color: var(--turquesa);
-    transition: width 0.25s ease;
+    transform: translate(-50%, -50%);
 }
 
-nav a:hover {
-    color: var(--azul);
-}
+@media (max-width: 650px) {
+    header .marca-logo {
+        flex-basis: 190px;
+        width: 190px;
+        height: 72px;
+    }
 
-nav a:hover::after {
-    width: 100%;
+    header .marca-logo img {
+        width: 355px !important;
+    }
 }
 
 /* =========================================================
@@ -1536,6 +1518,10 @@ footer p {
     scroll-margin-top: 105px;
 }
 
+#tecnicas-remocion {
+    scroll-margin-top: 105px;
+}
+
 .portada-noticias {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
@@ -2016,4 +2002,702 @@ footer p {
     left: 8px;
     color: var(--azul);
     font-weight: 900;
+}
+/* =========================================================
+   ORGANIGRAMA CON FOTOGRAFÍAS
+========================================================= */
+
+.organigrama-fotos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.organigrama-fotos .persona {
+    color: white;
+    background-color: var(--azul-oscuro);
+    border: 1px solid #003f62;
+    border-top: 5px solid var(--turquesa);
+    border-radius: 18px;
+    box-shadow: 0 16px 35px rgba(0, 38, 58, 0.15);
+}
+
+.organigrama-fotos .foto-equipo {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid var(--turquesa);
+    border-radius: 50%;
+}
+
+.organigrama-fotos .ceo {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 22px;
+    align-items: center;
+
+    width: min(400px, 100%);
+    min-height: 165px;
+    margin: 0 auto 65px;
+    padding: 24px;
+
+    text-align: left;
+}
+
+.organigrama-fotos .ceo h3,
+.organigrama-fotos .ceo .cargo,
+.organigrama-fotos .ceo .funcion {
+    margin: 0;
+    color: white;
+    text-align: left;
+}
+
+.organigrama-fotos .ceo h3 {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.organigrama-fotos .ceo .cargo {
+    margin-bottom: 8px;
+    color: var(--turquesa);
+    font-size: 14px;
+}
+
+.organigrama-fotos .equipo-directivo {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.organigrama-fotos .equipo-directivo .persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 330px;
+    padding: 22px 14px;
+
+    text-align: center;
+}
+
+.organigrama-fotos .equipo-directivo h3 {
+    display: block;
+    min-height: 48px;
+    margin: 17px 0 5px;
+
+    color: white;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.organigrama-fotos .equipo-directivo .cargo {
+    display: block;
+    min-height: 54px;
+    margin: 0 0 10px;
+
+    color: var(--turquesa);
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.organigrama-fotos .equipo-directivo .funcion {
+    margin: 0;
+    color: #d2e5ed;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1050px) {
+    .organigrama-fotos .equipo-directivo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .organigrama-fotos .ceo::after,
+    .organigrama-fotos .equipo-directivo::before,
+    .organigrama-fotos .equipo-directivo .persona::before {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .organigrama-fotos .ceo {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .organigrama-fotos .ceo h3,
+    .organigrama-fotos .ceo .cargo,
+    .organigrama-fotos .ceo .funcion {
+        text-align: center;
+    }
+
+    .organigrama-fotos .equipo-directivo {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================================
+   ORGANIGRAMA CON FOTOGRAFÍAS
+========================================================= */
+
+.organigrama-fotos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.organigrama-fotos .persona {
+    color: white;
+    background-color: var(--azul-oscuro);
+    border: 1px solid #003f62;
+    border-top: 5px solid var(--turquesa);
+    border-radius: 18px;
+    box-shadow: 0 16px 35px rgba(0, 38, 58, 0.15);
+}
+
+.organigrama-fotos .foto-equipo {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid var(--turquesa);
+    border-radius: 50%;
+}
+
+.organigrama-fotos .ceo {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 22px;
+    align-items: center;
+
+    width: min(400px, 100%);
+    min-height: 165px;
+    margin: 0 auto 65px;
+    padding: 24px;
+
+    text-align: left;
+}
+
+.organigrama-fotos .ceo h3,
+.organigrama-fotos .ceo .cargo,
+.organigrama-fotos .ceo .funcion {
+    margin: 0;
+    color: white;
+    text-align: left;
+}
+
+.organigrama-fotos .ceo h3 {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.organigrama-fotos .ceo .cargo {
+    margin-bottom: 8px;
+    color: var(--turquesa);
+    font-size: 14px;
+}
+
+.organigrama-fotos .equipo-directivo {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.organigrama-fotos .equipo-directivo .persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 330px;
+    padding: 22px 14px;
+
+    text-align: center;
+}
+
+.organigrama-fotos .equipo-directivo h3 {
+    display: block;
+    min-height: 48px;
+    margin: 17px 0 5px;
+
+    color: white;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.organigrama-fotos .equipo-directivo .cargo {
+    display: block;
+    min-height: 54px;
+    margin: 0 0 10px;
+
+    color: var(--turquesa);
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.organigrama-fotos .equipo-directivo .funcion {
+    margin: 0;
+    color: #d2e5ed;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1050px) {
+    .organigrama-fotos .equipo-directivo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .organigrama-fotos .ceo::after,
+    .organigrama-fotos .equipo-directivo::before,
+    .organigrama-fotos .equipo-directivo .persona::before {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .organigrama-fotos .ceo {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .organigrama-fotos .ceo h3,
+    .organigrama-fotos .ceo .cargo,
+    .organigrama-fotos .ceo .funcion {
+        text-align: center;
+    }
+
+    .organigrama-fotos .equipo-directivo {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================================
+   RESTAURAR MENÚ DE LA CABECERA
+========================================================= */
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
+header nav > a {
+    position: relative;
+
+    color: var(--azul-oscuro) !important;
+    text-decoration: none !important;
+
+    font-size: 15px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+header nav > a::after {
+    content: "";
+
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--turquesa);
+    transition: width 0.25s ease;
+}
+
+header nav > a:hover {
+    color: var(--azul) !important;
+}
+
+header nav > a:hover::after {
+    width: 100%;
+}
+
+header .menu-noticias {
+    flex: 0 0 auto;
+}
+
+header .menu-noticias summary {
+    color: var(--azul-oscuro);
+    font-size: 15px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    header nav {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
+
+    header nav > a,
+    header .menu-noticias summary {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   NOTICIAS: TÉCNICAS DE REMOCIÓN Y PORTAFOLIO FUTURO
+========================================================= */
+
+.tecnicas-remocion {
+    padding: 90px 6%;
+    background:
+        radial-gradient(circle at 92% 8%, rgba(0, 201, 186, 0.13), transparent 25%),
+        var(--celeste);
+}
+
+.encabezado-tecnicas {
+    max-width: 980px;
+    margin-bottom: 42px;
+}
+
+.encabezado-tecnicas h2 {
+    margin-bottom: 22px;
+    color: var(--azul-oscuro);
+    font-size: clamp(38px, 4.5vw, 60px);
+    letter-spacing: -1.8px;
+    line-height: 1.05;
+}
+
+.encabezado-tecnicas > p:not(.etiqueta-seccion) {
+    padding: 22px 25px;
+    color: var(--texto);
+    background-color: var(--blanco);
+    border-left: 6px solid var(--turquesa);
+    border-radius: 14px;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.encabezado-tecnicas strong {
+    color: var(--azul-oscuro);
+}
+
+.grid-tecnicas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.tecnica-futura {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-top: 6px solid var(--turquesa);
+    border-radius: 20px;
+    box-shadow: 0 15px 36px rgba(0, 38, 58, 0.09);
+}
+
+.tecnica-etiqueta {
+    align-self: flex-start;
+    padding: 7px 12px;
+    color: var(--azul-oscuro);
+    background-color: var(--turquesa-suave);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.tecnica-futura h3 {
+    color: var(--azul-oscuro);
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.tecnica-futura > p {
+    color: var(--texto);
+    line-height: 1.75;
+}
+
+.flujo-tecnica {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px;
+    background-color: var(--azul-oscuro);
+    border-radius: 13px;
+}
+
+.flujo-tecnica span {
+    padding: 7px 10px;
+    color: var(--blanco);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.flujo-tecnica b {
+    color: var(--turquesa);
+}
+
+.dato-tecnica {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 18px;
+    background-color: var(--turquesa-suave);
+    border-radius: 13px;
+}
+
+.dato-tecnica strong {
+    color: var(--azul);
+    font-size: 26px;
+    line-height: 1;
+}
+
+.dato-tecnica span {
+    color: var(--texto);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.lista-eficiencias {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.lista-eficiencias span {
+    padding: 12px;
+    color: var(--texto);
+    background-color: var(--celeste);
+    border: 1px solid var(--borde);
+    border-radius: 11px;
+    font-size: 13px;
+}
+
+.lista-eficiencias span:last-child {
+    grid-column: 1 / -1;
+}
+
+.lista-eficiencias strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--azul);
+    font-size: 19px;
+}
+
+.tecnica-futura .nota-tecnica {
+    margin-top: auto;
+    padding: 17px;
+    color: var(--texto);
+    background-color: #f4f8fa;
+    border-left: 4px solid var(--azul);
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.tecnica-futura .cita-numero,
+.encabezado-tecnicas .cita-numero {
+    color: var(--azul);
+    font-weight: 900;
+}
+
+@media (max-width: 950px) {
+    .grid-tecnicas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .tecnicas-remocion {
+        padding: 65px 6%;
+    }
+
+    .tecnica-futura {
+        padding: 24px;
+    }
+
+    .dato-tecnica,
+    .lista-eficiencias {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-eficiencias span:last-child {
+        grid-column: auto;
+    }
+}
+
+/* =========================================================
+   CORRECCIÓN FINAL DEL MENÚ DE NOTICIAS
+========================================================= */
+
+header .menu-noticias summary {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+header .menu-noticias summary:hover,
+header .menu-noticias summary:focus-visible,
+header .menu-noticias[open] summary {
+    color: var(--azul);
+    background-color: var(--turquesa-suave);
+    outline: none;
+}
+
+header .submenu-noticias {
+    overflow: visible;
+    width: 300px;
+    padding: 10px;
+}
+
+header .submenu-noticias a,
+header .submenu-contaminantes a {
+    color: var(--azul-oscuro) !important;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none !important;
+    font-weight: 750;
+    transition: color 0.2s ease, background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+header .submenu-noticias a:visited,
+header .submenu-contaminantes a:visited {
+    color: var(--azul-oscuro) !important;
+}
+
+header .submenu-noticias a:hover,
+header .submenu-noticias a:focus-visible,
+header .submenu-contaminantes a:hover,
+header .submenu-contaminantes a:focus-visible {
+    color: var(--azul) !important;
+    background-color: var(--turquesa-suave);
+    outline: none;
+    transform: translateX(2px);
+}
+
+header .enlace-contaminantes {
+    color: var(--azul-oscuro) !important;
+    background-color: var(--celeste) !important;
+    border: 1px solid var(--borde) !important;
+}
+
+header .submenu-contaminantes {
+    overflow-y: auto;
+    max-height: min(440px, calc(100vh - 125px));
+}
+
+@media (max-width: 1000px) {
+    header .submenu-noticias {
+        top: calc(100% + 10px);
+        right: 0;
+        left: auto;
+        overflow-y: auto;
+        width: min(350px, calc(100vw - 24px));
+        max-height: calc(100dvh - 115px);
+        overscroll-behavior: contain;
+    }
+
+    header .submenu-contaminantes {
+        visibility: visible;
+        position: static;
+        overflow: visible;
+        width: 100%;
+        max-height: none;
+        margin-top: 7px;
+        padding: 6px 0 0 8px;
+        opacity: 1;
+        background-color: transparent;
+        border: 0;
+        border-left: 2px solid var(--turquesa);
+        border-radius: 0;
+        box-shadow: none;
+        transform: none;
+    }
+
+    header .submenu-contaminantes p {
+        margin-top: 7px;
+    }
+
+    header .enlace-contaminantes span {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 7px 12px 10px;
+    }
+
+    header .marca-logo {
+        align-self: center;
+        flex-basis: auto;
+        width: 165px;
+        height: 56px;
+    }
+
+    header .marca-logo img {
+        width: 310px !important;
+    }
+
+    header nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        width: 100%;
+    }
+
+    header nav > a,
+    header .menu-noticias summary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 39px;
+        padding: 7px 9px;
+        background-color: var(--blanco);
+        border: 1px solid var(--borde);
+        border-radius: 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    header nav > a::after {
+        display: none;
+    }
+
+    header .menu-noticias {
+        position: relative;
+        width: 100%;
+    }
+
+    header .submenu-noticias {
+        top: calc(100% + 8px);
+        right: 0;
+        left: auto;
+        width: min(350px, calc(200vw - 31px));
+        max-width: calc(100vw - 24px);
+        max-height: calc(100dvh - 155px);
+        padding: 9px;
+        border-radius: 14px;
+    }
+
+    header .submenu-noticias a,
+    header .submenu-contaminantes a {
+        padding: 10px 11px;
+        font-size: 13px;
+    }
 }
