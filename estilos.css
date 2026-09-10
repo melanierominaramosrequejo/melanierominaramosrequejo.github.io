@@ -2711,3 +2711,23 @@ header .submenu-contaminantes {
     line-height: 1.6;
     text-align: center;
 }
+footer .credito .declaracion-ia {
+    max-width: 560px;
+    margin: 9px 0 0 auto;
+    padding: 0;
+
+    color: #9fc1ce;
+    border: 0;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: right;
+}
+
+@media (max-width: 650px) {
+    footer .credito .declaracion-ia {
+        margin-left: 0;
+        text-align: left;
+    }
+}
